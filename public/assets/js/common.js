@@ -1,3 +1,4 @@
+// 退出登录
 $('#logout').on('click',function(){
     if(confirm('你确定要退出吗?')){
        
@@ -14,6 +15,7 @@ $('#logout').on('click',function(){
         })
     }
 });
+
 // 判断登录状态
 $.ajax({
     type: 'get',
@@ -24,3 +26,8 @@ $.ajax({
     }
 })
 
+// 时间格式化
+function dateFormat(date){
+    date = new Date(date);
+    return date.getFullYear()+'年'+(date.getMonth()+1)+'月'+date.getDate()+'日'
+};
