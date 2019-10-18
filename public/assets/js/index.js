@@ -28,3 +28,5 @@ $.ajax({
         $('.comments_count').html(`<strong>${res.commentCount}</strong>条评论`)
     }
 });
+
+

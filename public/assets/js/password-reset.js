@@ -6,7 +6,10 @@ $("#modifyForm").on('submit',function(){
         url:'/users/password',
         data: dataForm,
         success: function(res){
-            location.href = './login.html'
+            console.log(res);
+            
+         location.href = './login.html'
+          return false
         },
         error: function(res){
             console.log(res);

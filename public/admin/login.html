@@ -33,6 +33,10 @@
   </div>
   <script src="../assets/vendors/jquery/jquery.min.js"></script>
   <script>
+
+    localStorage.clear()
+
+
      $('.alert').hide();
     $('#loginBtn').on('click', function () {
       let email = $('#email').val();
@@ -56,7 +60,9 @@
           password
         },
         success: function(res){
+          console.log(res);
           
+          localStorage.setItem('user',JSON.stringify(res))
           
          location.href = 'index.html'
         },
