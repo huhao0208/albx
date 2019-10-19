@@ -110,26 +110,26 @@ $('.tbodyBox').on('change', function () {
 // 批量删除
 
 $(".page-action a").on('click', function () {
-   
-   if(confirm('你确定要执行批量删除这'+checkedIpt.length +'个用户?')){
-    let id = '';
-    checkedIpt.each((index, item) => {
-        id += $(item).attr('data-id') + '-';
-    });
-    id= id.substr(0,id.length-1);
-    $.ajax({
-        type: 'delete',
-        url: '/categories/'+ id,
-        success: function (res) {
-            console.log(res);
-            location.reload();
-        },
-        error: function(res){
-            console.log(res);
-            
-        }
-    })
-   }
+
+    if (confirm('你确定要执行批量删除这' + checkedIpt.length + '个用户?')) {
+        let id = '';
+        checkedIpt.each((index, item) => {
+            id += $(item).attr('data-id') + '-';
+        });
+        id = id.substr(0, id.length - 1);
+        $.ajax({
+            type: 'delete',
+            url: '/categories/' + id,
+            success: function (res) {
+                console.log(res);
+                location.reload();
+            },
+            error: function (res) {
+                console.log(res);
+
+            }
+        })
+    }
 
 
 

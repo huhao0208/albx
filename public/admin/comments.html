@@ -85,26 +85,26 @@
   <script type='text/html' id='commentsTpl'>
     {{each records}}
     <tr>
-        <td>{{$value.author.nickName}}</td>
-        <td>{{$value.content}}</td>
-        <td>{{$value.post.title}}</td>
-        <td>{{$imports.dateFormat($value.createAt)}}</td>
-        <td>{{$value.state==1?'批准':'未批准'}}</td>
-        <td class="text-center" >
-          {{if $value.state==0}}
-          <a href="javascript:;" class="btn btn-info btn-xs commentsState" data-val=0>批准</a>
-          {{else}}
-          <a href="javascript:;" class="btn btn-warning btn-xs commentsState" data-val=1 >驳回</a>
-          {{/if}}
-          <a href="javascript:;" class="btn btn-danger btn-xs commentsDelete" data-id={{$value._id}} >删除</a>
-        </td>
-      </tr>
-      {{/each}}
+      <td>{{$value.author.nickName}}</td>
+      <td>{{$value.content}}</td>
+      <td>{{$value.post.title}}</td>
+      <td>{{$imports.dateFormat($value.createAt)}}</td>
+      <td>{{$value.state==1?'批准':'未批准'}}</td>
+      <td class="text-center">
+        {{if $value.state==0}}
+        <a href="javascript:;" class="btn btn-info btn-xs commentsState" data-val=0>批准</a>
+        {{else}}
+        <a href="javascript:;" class="btn btn-warning btn-xs commentsState" data-val=1>驳回</a>
+        {{/if}}
+        <a href="javascript:;" class="btn btn-danger btn-xs commentsDelete" data-id={{$value._id}}>删除</a>
+      </td>
+    </tr>
+    {{/each}}
   </script>
-  分页模板
+  <!-- 分页模板 -->
   <script type='text/html' id='commentsPageTpl'>
     {{if page>1}}
-    <li><a href="#" onclick="commentsP({{page}}-1)" >上一页</a></li>
+    <li><a href="#" onclick="commentsP({{page}}-1)">上一页</a></li>
     {{/if}}
     {{each display}}
     <li class={{$value==page?'active':''}}><a href="#" onclick="commentsP({{$value}})">{{$value}}</a></li>
