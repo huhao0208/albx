@@ -11,7 +11,7 @@
   <style>
     .swiper-container {
       width: 100%;
-      height: 318px;
+      /* height: 100%; */
     }
 
     .swiper-slide {
@@ -31,9 +31,11 @@
   <div class="wrapper">
     <div class="header">
       <h1 class="logo"><a href="index.html"><img src="assets/img/logo.png" alt=""></a></h1>
-      <!-- 分类列表 -->
       <ul class="nav">
-
+        <li><a href="javascript:;"><i class="fa fa-glass"></i>奇趣事</a></li>
+        <li><a href="javascript:;"><i class="fa fa-phone"></i>潮科技</a></li>
+        <li><a href="list.html"><i class="fa fa-fire"></i>会生活</a></li>
+        <li><a href="javascript:;"><i class="fa fa-gift"></i>美奇迹</a></li>
       </ul>
       <div class="search">
         <form>
@@ -187,17 +189,22 @@
       </div>
     </div>
     <div class="content">
-      <!-- 轮播图 -->
-      <div class="swiper-container" >
-          <div class="swiper-wrapper" id='carouselBox'>
-
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="uploads/slide_1.jpg">
+            <span>XIU主题演示</span>
           </div>
-          <!-- 如果需要分页器 -->
-          <div class="swiper-pagination"></div>
-          <!-- 如果需要导航按钮 -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-         
+          <div class="swiper-slide">
+            <img src="uploads/slide_2.jpg">
+            <span>XIU主题演示</span>
+          </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
       <div class="panel hots">
         <h3>热门推荐</h3>
@@ -314,29 +321,10 @@
       <p>© 2016 XIU主题演示 本站主题由 themebetter 提供</p>
     </div>
   </div>
-  <!-- 分类列表模板 -->
-  <script type="text/html" id='hm_cate_Tpl'>
-    {{each data}}
-    <li data-id={{$value._id}}><a href="javascript:;"><i class="fa {{$value.className}}"></i>{{$value.title}}</a></li>
-  {{/each}}
-  </script>
-
-  <!-- 轮播图模板 -->
-  <script type="text/html" id="carouselTpl">
-
-    {{each data}}
-        <div class="swiper-slide" >
-          <img src={{$value.image}} data-link={{$value.link}}>
-          <span>{{$value.title}}</span>
-        </div>
-    {{/each}}   
-  </script>
   <script src="assets/vendors/jquery/jquery.js"></script>
- 
-  <script src="assets/vendors/art-template/template-web.js"></script>
-  <script src="assets/js/home.js"></script>
   <script src="assets/vendors/swipe/swiper.js"></script>
-  <!-- <script>
+  <script src="assets/vendors/art-template/template-web.js"></script>
+  <script>
     var swiper = new Swiper('.swiper-container', {
       loop: true,
       navigation: {
@@ -347,8 +335,7 @@
         el: '.swiper-pagination'
       },
     });    
-  </script> -->
-  
+  </script>
 </body>
 
 </html>
