@@ -23,16 +23,8 @@ $("#settingsForm").on("submit", function () {
         type: 'post',
         url: '/settings',
         data: data,
-<<<<<<< HEAD
-        success: function (res) {
-            alert('设置成功');
-            location.href = '/admin/index.html'
-
-=======
         success: function(res){
-            console.log(res);
-            
->>>>>>> parent of 9867ca9... 完成了首页轮播图
+            console.log(res); 
         }
     });
     return false
