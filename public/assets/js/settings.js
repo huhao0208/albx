@@ -24,7 +24,8 @@ $("#settingsForm").on("submit",function(){
         url: '/settings',
         data: data,
         success: function(res){
-            console.log(res);
+           alert('设置成功');
+           location.href ='/admin/index.html'
             
         }
     });
